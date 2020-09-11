@@ -9,9 +9,9 @@
 ## #239 滑动窗口最大值	困难	
 所有滑动窗口的题目，解法都很类似。这道题使用双端队列即可解决。每次讲新元素addFirst，同时需要pollLast队列中所有小于当前元素的已有元素（while循环实现）。  
 记住让队列中不超过k个元素的写法：  
-for (int i = 0; i < nums.length; i++) {
-    if (!temp.isEmpty() && temp.peekFirst() <= i - k) {
-        temp.pollFirst();
+for (int i = 0; i < nums.length; i++) {  
+    if (!temp.isEmpty() && temp.peekFirst() <= i - k) {  
+        temp.pollFirst();  
     }  
 ## #84 柱状图中最大的矩形	困难	
 第一道hard题，花了些时间想明白。使用单端stack可以解决。这种方法不容易想到，必须牢记背熟。特别注意要在最后添加“哨兵”元素“0”，这样才可以处理所有柱状相等或者递增的情况。
@@ -33,8 +33,8 @@ while (j < k && nums[j] == nums[++j]);
 ## #1 两数之和	简单  
 lc的第一题，很经典。暴力解法时间复杂度O(n2)，此外可以直接用哈希表解决，之后几周会具体讲。  
 有关哈希表的几个语法：  
-HashMap<Integer,Integer> sum = new HashMap<>();
-sum.containsKey(nums[i])
+HashMap<Integer,Integer> sum = new HashMap<>();  
+sum.containsKey(nums[i])  
 sum.put(target - nums[i],i);
 ## #66 加一	简单
 本题最巧妙的思路在于，对于每一位只需要检测是否为9。是就置零，否则+1，一旦+1就直接return结果即可。无需使用新数组放进位。  
